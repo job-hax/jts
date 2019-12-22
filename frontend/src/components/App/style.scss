@@ -1,0 +1,229 @@
+@import '~antd/dist/antd.min.css';
+@import '~react-telephone-input/css/default.css';
+@import url(https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap:400italic,700,800italic,400,700,800);
+
+
+$text_color: rgb(34, 34, 34);
+$base_color: rgba(0, 0, 0, 0.5);
+$border_color: rgba(0, 0, 0, 1);
+$soft_button_color: rgb(11, 106, 255);
+$primary_button_color: $soft_button_color;
+$primary_button_hover_color: rgb(64, 169, 255);
+$active_color: transparentize($soft_button_color, 0.2);
+$selection_color: transparentize($soft_button_color, 0.3);
+$hover_color: transparentize($soft_button_color, 0.6);
+$highlight_color: transparentize($soft_button_color, 0.9);
+$spinner_background_color: rgba(0, 0, 0, 0.2);
+$line_color: #efefef;
+$gray_text_color: #aaaaaa;
+
+$banner_image: url('https://jobhax.com/src/assets/images/homebanner.jpg');
+
+$primary_font_type: "Helvetica Neue",
+helvetica !important;
+
+body {
+  font-family: $primary_font_type;
+  color: $text_color;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.main-big-container {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+
+  .main-container {
+    height: 100%;
+    width: 100%;
+
+    .coach-modal-header {
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+
+      .coach-head-photo {
+        min-width: 80px;
+        min-height: 80px;
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 40px;
+        overflow: hidden;
+        position: relative;
+        margin: 4px 24px 0 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        img {
+          position: absolute;
+          margin: auto;
+          min-width: 80px;
+          min-height: 80px;
+          max-width: 90px;
+          max-height: 90px;
+          left: -100%;
+          right: -100%;
+          top: -100%;
+          bottom: -100%;
+          border-radius: 40px;
+        }
+      }
+
+      .coach-header-info {
+        font-size: 14px;
+        font-weight: normal;
+
+        .coach-name {
+          font-size: 16px;
+        }
+
+        .connection-buttons-container {
+          margin: 12px 0px;
+          display: flex;
+          justify-content: space-around;
+
+          .ant-btn {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+
+    .coach-modal-body {}
+
+  }
+}
+
+
+.react-tel-input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.react-tel-input input[type='text'],
+.react-tel-input input[type='tel'] {
+  border: 1px solid #d9d9d9;
+  box-shadow: none;
+  border-radius: 4px;
+  line-height: 90%;
+  height: 100%;
+  width: 100%;
+}
+
+.react-tel-input .selected-flag {
+  border: none;
+  background: none;
+}
+
+.react-tel-input input[type='text']:focus,
+.react-tel-input input[type='tel']:focus {
+  border-color: $active_color
+}
+
+.react-tel-input input[type='text']:hover,
+.react-tel-input input[type='tel']:hover {
+  border-color: $hover_color;
+}
+
+.react-tel-input .country-list {
+  border: none;
+  border-radius: 4px;
+  margin: 2px 0 0 0;
+  max-height: 180px;
+  max-width: 300px;
+  position: absolute;
+  left: -150px;
+  right: -150px;
+}
+
+.ant-btn {
+  color: $primary_button_color;
+  border-color: $primary_button_color;
+}
+
+.ant-btn-primary {
+  color: #fff !important;
+  background-color: $primary_button_color;
+  border: $primary_button_color !important;
+}
+
+.ant-btn:hover {
+  color: $primary_button_hover_color !important;
+  border-color: $primary_button_hover_color !important;
+}
+
+.ant-btn-primary:hover {
+  color: #fff !important;
+  background-color: $primary_button_hover_color !important;
+  border: $primary_button_hover_color !important;
+
+}
+
+textarea.ant-input {
+  resize: none;
+}
+
+.delete-button {
+  width: fit-content;
+  width: -moz-fit-content;
+  margin: 4px 4px 4px 0px;
+
+  .ant-btn {
+    color: red;
+    border-color: red;
+  }
+
+  .ant-btn:hover {
+    color: rgb(255, 120, 120) !important;
+    border-color: rgb(255, 120, 120) !important;
+  }
+}
+
+.geosuggest__suggests-wrapper {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px 1px #efefef;
+  width: 280px;
+  max-height: 240px;
+  overflow-x: hidden;
+  padding: 0px;
+}
+
+.geosuggest__input {
+  height: 32px;
+  max-width: 100%;
+  width: 280px;
+  border-radius: 4px;
+  border-color: $selection_color !important;
+  padding: 4px;
+}
+
+.geosuggest__item {
+  padding: 4px;
+  list-style-type: none;
+  margin-left: -28px;
+  cursor: pointer;
+}
+
+.geosuggest__suggests--hidden {
+  max-height: 0;
+  overflow: hidden;
+  border-width: 0;
+}
+
+.geosuggest__item--active {
+  background: $selection_color;
+  color: white;
+}

@@ -1,0 +1,82 @@
+@import "../../App/style.scss";
+
+.company-card-container {
+    //height: 10.75vh;
+    min-height: 110px;
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding-top: 15px;
+    margin-top: -1px;
+    border-top: 1px solid $line_color;
+    border-bottom: 1px solid $line_color;
+
+    .company-card-initial {
+        display: flex;
+        justify-content: left;
+
+        .company-card-left {
+            height: 100%;
+            margin-right: 12px;
+
+            .company-logo {
+                width: calc(100vh * 80/1440);
+                min-width: 80px;
+                height: auto;
+                margin: 0px 10px 0px 0px;
+                display: flex;
+                align-items: center;
+                border-radius: 4px;
+                overflow: hidden;
+                margin-bottom: 15px;
+
+                img {
+                    width: calc(100vh * 80/1440);
+                    min-width: 80px;
+                    border-radius: 4px;
+                    height: auto;
+                }
+            }
+
+        }
+
+        .company-card-right {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            .company-name {
+                font-size: calc(100% * 16/14);
+                font-weight: bold;
+            }
+        }
+    }
+
+    .see-reviews-button {
+        display: flex;
+        color: $gray_text_color;
+        margin-bottom: 10px;
+        cursor: pointer;
+        line-height: 18px;
+    }
+
+    .company-card-reviews-container {
+        max-height: 60vh;
+        padding: 0px 0px 0px 0px;
+        display: flex;
+        overflow: hidden;
+
+        &.hidden {
+            display: none;
+        }
+    }
+}
+
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px 100px 0px;
+}

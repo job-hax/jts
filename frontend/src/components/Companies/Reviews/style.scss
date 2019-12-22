@@ -1,0 +1,170 @@
+@import "../../App/style.scss";
+
+.reviews-big-container {
+    width: 100%;
+    min-width: 100%;
+
+    .reviews-container {
+        width: 105%;
+        min-width: 105%;
+        max-height: 100%;
+        overflow-x: hidden;
+
+        .review-container {
+            width: calc(100% * 100/105);
+            height: fit-content;
+            height: -moz-fit-content;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid $line_color;
+            font-weight: normal;
+
+            .review-header {
+                padding-bottom: 15px;
+
+                .reviewer-name {
+                    font-size: 120%;
+                }
+
+                .header-bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    max-height: 20px;
+
+                    .date {
+                        font-size: 12px;
+                        color: $gray_text_color;
+                        text-align: end;
+                    }
+                }
+            }
+
+            .review-body {
+                padding: 15px 0px 20px 0px;
+                border-top: 1px solid $line_color;
+
+                .review-body-company {
+
+                    .body-company-sub-container {
+                        display: flex;
+                        flex-direction: column;
+
+                        .body-company-data {
+
+                            .employment-status {
+                                display: flex;
+
+                                .info {}
+                            }
+
+                            .company-review-text-container {
+
+                                .company-review-text {}
+                            }
+                        }
+                    }
+                }
+
+                .review-body-interview {
+
+                    .interview-ratings {
+
+                        .overall-experience-container {
+                            display: flex;
+                            justify-content: flex-start;
+
+                            .overall-experience {
+                                display: flex;
+                                height: 30px;
+                            }
+                        }
+
+                        .difficulty-container {
+                            display: flex;
+                            justify-content: flex-start;
+
+                            .difficulty-rating-container {
+                                display: flex;
+                                justify-content: flex-start;
+                                margin: 2px 0px 0px 0px;
+                                font-size: 8px;
+
+                                .circle-container {
+                                    display: flex;
+                                    justify-content: flex-start;
+
+                                    .circle {
+                                        border: 1px solid $text_color;
+                                        height: 16px;
+                                        width: 16px;
+                                        border-radius: 8px;
+                                    }
+
+                                    .dash {
+                                        background-color: $text_color;
+                                        width: 20px;
+                                        height: 1px;
+                                        margin: 8px 0px 0px 0px;
+                                    }
+                                }
+
+                                .first-label {
+                                    margin: 2px 3px 0px 5px;
+                                }
+
+                                .last-label {
+                                    margin: 2px 0px 0px 3px;
+                                }
+                            }
+                        }
+                    }
+
+                    .interview-experience {
+                        margin-top: 12px;
+
+                        .interview-notes {}
+                    }
+                }
+
+                label {
+                    font-weight: 450;
+                    margin-right: 5px;
+                    color: $gray_text_color;
+                }
+
+                .not-specified {
+                    font-size: 90%;
+                    color: rgba(116, 116, 116, 0.4);
+                    font-style: italic;
+                    margin-left: 5px
+                }
+            }
+        }
+    }
+
+
+    .filter {
+        margin-bottom: 15px;
+
+        .ant-btn {
+            background-color: $line_color;
+            color: $gray_text_color;
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            border-color: $line_color;
+            text-overflow: ellipsis !important;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ant-btn:hover {
+            border-color: $gray_text_color;
+            color: $gray_text_color;
+        }
+    }
+}
