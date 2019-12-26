@@ -70,3 +70,5 @@ export const COLLEGES = type => `${apiRoot}/api/colleges/${type}/`;
 
 export const JOBS = parameters =>
   `${jobPostingApiRoot}/api/positions/company${parameters}/`;
+
+export const SUBMIT_JOB_APPLICATION = `${jobPostingApiRoot}/api/positionapps/apply/`;

@@ -15,8 +15,7 @@ class ResumeUploader extends React.Component {
     super(props);
 
     this.state = {
-      files: null,
-      formData: null
+      files: this.props.formed_files
     };
 
     this.handleUpload = this.handleUpload.bind(this);
@@ -24,54 +23,24 @@ class ResumeUploader extends React.Component {
     this.getFiles = this.getFiles.bind(this);
   }
 
-  componentDidMount() {
-    this.getFiles();
-  }
-
-  async getFiles() {
-    await this.props.handleTokenExpiration("resume Uploader getResume");
-    const { card } = this.props;
-    let config = { method: "GET" };
-    axiosCaptcha(FILES(card.id), config).then(response => {
-      if (response.statusText === "OK") {
-        if (response.data.success) {
-          let rawFiles = response.data.data;
-          let formedFiles = [];
-          rawFiles.forEach(element => {
-            let file = {};
-            file.uid = element.id.toString();
-            file.name = element.name;
-            file.status = "done";
-            file.url = apiRoot + element.file;
-            formedFiles.push(file);
-          });
-          this.setState({
-            files: formedFiles
-          });
-        }
-      }
-    });
+  componentDidUpdate() {
+    this.getFiles();	    if (this.props.formed_files != this.state.files) {
+    }	      this.setState({ files: this.props.formed_files });
   }
 
   handleUpload(file) {
-    const { card } = this.props;
-    console.log(file);
-    let bodyFormData = new FormData();
-    let config = { method: "POST" };
-    config.headers = {};
-    config.headers["Content-Type"] = "multipart/form-data";
-    bodyFormData.append("file", file);
-    config.body = bodyFormData;
-    axiosCaptcha(FILES(card.id), config).then(response => {
-      if (response.statusText === "OK") {
-        if (response.data.success) {
-          console.log("file submitted!");
-          this.getFiles();
-        }
+    console.log("resume upload file", file);
+    let formedFiles = [
+      {
+        uid: "1",
+        name: file.name,
+        status: "done"
       }
-    });
+    ];
+    this.props.updateParentState("resume", file);
+    this.props.updateParentState("formed_files", formedFiles);
   }
-
+  
   handleRemove(file) {
     const { card } = this.props;
     let config = { method: "DELETE" };
