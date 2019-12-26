@@ -6,7 +6,6 @@ frontend/build
 frontend/dist
 .vscode/tasks.json
 .DS_Store
-frontend/.babelrc
 # Byte-compiled / optimized / DLL files
 backend/**/__pycache__
 **/__pycache__
