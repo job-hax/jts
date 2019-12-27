@@ -20,12 +20,12 @@ class ResumeUploader extends React.Component {
 
     this.handleUpload = this.handleUpload.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
-    this.getFiles = this.getFiles.bind(this);
   }
 
   componentDidUpdate() {
-    this.getFiles();	    if (this.props.formed_files != this.state.files) {
-    }	      this.setState({ files: this.props.formed_files });
+    if (this.props.formed_files != this.state.files) {
+      this.setState({ files: this.props.formed_files });
+    }
   }
 
   handleUpload(file) {
@@ -40,34 +40,35 @@ class ResumeUploader extends React.Component {
     this.props.updateParentState("resume", file);
     this.props.updateParentState("formed_files", formedFiles);
   }
-  
+
   handleRemove(file) {
-    const { card } = this.props;
-    let config = { method: "DELETE" };
-    console.log(file);
-    config.body = { jobapp_file_id: parseInt(file.uid) };
-    axiosCaptcha(FILES(card.id), config).then(response => {
-      if (response.statusText === "OK") {
-        if (response.data.success) {
-          this.getFiles();
-        }
-      }
+    let formedFiles = this.state.files.filter(
+      stored_file => stored_file != file
+    );
+    this.setState({
+      files: formedFiles
     });
+    this.props.updateParentState("resume", null);
+    this.props.updateParentState("formed_files", []);
   }
 
   generateFiles() {
-    console.log(this.state);
+    console.log("resume uploader state", this.state);
     return (
       <Upload
-        action={file => this.handleUpload(file)}
+        beforeUpload={file => this.handleUpload(file)}
         onRemove={this.handleRemove}
         fileList={this.state.files}
-        showUploadList={{ showRemoveIcon: true, showDownloadIcon: true }}
+        showUploadList={{ showRemoveIcon: true }}
       >
-        <Button>
-          <Icon type="upload" /> Upload CV
-        </Button>
-        {(this.state.files === null || this.state.files.length === 0) && <div style={{color:"red", textAlign:"right"}}>* required</div>}
+        {(this.state.files === null || this.state.files.length === 0) && (
+          <div>
+            <Button>
+              <Icon type="upload" /> Upload CV
+            </Button>
+            <div style={{ color: "red", textAlign: "right" }}>* required</div>
+          </div>
+        )}
       </Upload>
     );
   }

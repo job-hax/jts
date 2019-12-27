@@ -105,7 +105,7 @@ module.exports = {
   },
   devServer: {
     host: "localhost",
-    allowedHosts: ["jts-be.jobhax.com",".jobhax.com", "backend.jobhax.com"],
+    allowedHosts: [".jobhax.com", "backend.jobhax.com"],
     compress: true,
     historyApiFallback: true,
     stats: "errors-only"

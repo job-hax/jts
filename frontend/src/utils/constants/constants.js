@@ -129,4 +129,3 @@ export const imageIcon = (
     ></path>
   </svg>
 );
-
