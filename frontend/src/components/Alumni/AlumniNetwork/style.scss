@@ -1,0 +1,90 @@
+@import "../../App/style.scss";
+
+.alumni-big-container {
+    color: $text_color;
+    height: 100%;
+    padding-top: 36px;
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+
+        h2 {
+            font-size: 24pt;
+            margin-bottom: 0;
+        }
+    }
+
+    .alumni-container {
+        display: flex;
+        justify-content: center;
+
+        .alumni-cards-container {
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+
+            .pagination-container {
+                margin: 16px 0 0 0;
+            }
+        }
+
+        .filter-area-container {
+            height: 330px;
+            width: 320px;
+            margin: 40px 0 100px 0;
+            background-color: white;
+            border-radius: 4px;
+
+            .title {
+                padding: 24px 0 0 0;
+                margin: 0;
+                font-size: 120%;
+                font-weight: 500;
+            }
+
+            .filter-container {
+                width: 300px;
+                display: flex;
+                justify-content: space-between;
+                padding: 12px 0 0 24px
+            }
+        }
+
+        .filter-area-container:hover {
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @media only screen and (max-device-width : 800px) and (-webkit-min-device-pixel-ratio : 2) {
+            .alumni-cards-container {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .filter-area-container {
+                height: fit-content;
+                margin: 12px calc((100vw - 320px) / 2);
+
+                .title {
+                    padding: 0px;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+
+.bottom-fixed-footer {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+.footer-margin {
+    width: 100%;
+    margin-top: 80px;
+}

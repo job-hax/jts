@@ -1,0 +1,206 @@
+@import "../App/style.scss";
+
+.metrics_feature_area {
+    background-color: white;
+    color: $text_color;
+    padding-top: 32px;
+    min-height: 600px;
+    height: auto;
+
+    .title {
+        text-align: center;
+        margin-bottom: 25px;
+
+        h2 {
+            font-size: 24pt;
+            margin-bottom: 24px;
+        }
+    }
+
+    .features {
+        display: flex;
+        flex-direction: row;
+        margin-left: 30px;
+        margin-right: 30px;
+        overflow-y: hidden;
+
+        .feature {
+            margin: 2.08%;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            padding-top: 50px;
+            min-width: 100px;
+            width: 300px;
+            flex-grow: 1;
+            text-align: center;
+
+            img {
+                width: 60%;
+                max-width: 180px;
+            }
+
+            h4 {
+                padding-top: 16px;
+                padding-bottom: 4px;
+                max-width: 380px;
+                margin: auto;
+            }
+
+            p {
+                max-width: 380px;
+                margin: auto;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.metrics-big-group-container {
+    width: 100%;
+    padding: 0 0 80px 0;
+    overflow: hidden;
+
+    .metric-big-group {
+        min-height: 700px;
+        height: fit-content;
+        height: -moz-fit-content;
+        padding: 8px 110px 20px 110px;
+        margin: 12px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        .metric-group {
+            display: flex;
+            justify-content: flex-start;
+
+            .metric-summary-container {
+                height: 180px;
+                width: 272px;
+                overflow: hidden;
+                //border: 1px solid white;
+                margin: 0px 12px 12px 12px;
+                border-radius: 8px;
+                transition: transform .3s;
+                -webkit-transition: transform .3s;
+                -moz-transition: transform .3s;
+                -o-transition: transform .3s;
+                -ms-transition: transform .3s;
+
+
+                .metric-summary {
+                    margin: -40px 0px 0px 0px;
+                    height: 220px;
+                    width: 272px;
+                    background-color: white;
+                }
+            }
+
+            .metric-summary-container:hover {
+                z-index: 20;
+                transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+            }
+
+            .metric-detailed-container {
+                margin: 12px 12px 0 12px;
+                height: 500px;
+                width: 272px;
+                //box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+                border: 1px solid white;
+                background-color: white;
+                border-radius: 8px;
+                transition: transform .3s;
+                -webkit-transition: transform .3s;
+                -moz-transition: transform .3s;
+                -o-transition: transform .3s;
+                -ms-transition: transform .3s;
+
+
+                .metric {
+                    height: 500px;
+                    width: 260px;
+
+                    .echarts-for-react {
+                        div {
+                            z-index: 0;
+                        }
+                    }
+
+                    .list-container {
+                        overflow: hidden;
+                        width: 260px;
+
+                        .list {
+                            width: 260px;
+                            height: 208px;
+                            padding: 0 16px 0 0;
+                            margin: 4px 0px 0px 20px;
+                            overflow-x: hidden;
+                        }
+                    }
+
+                }
+            }
+
+            .metric-detailed-container:hover {
+                z-index: 20;
+                transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -o-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+            }
+
+        }
+
+        .university-metrics-header-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+
+            .university-metrics-header {
+                margin: 0px 20px 20px 20px;
+                font-size: 110%;
+                font-weight: 500;
+                text-align: center;
+                min-width: 240px;
+            }
+
+            .header-line {
+                margin: 10px 0 0 0;
+                width: 420px;
+                height: 1px;
+                background-color: black;
+            }
+
+            @media only screen and (max-device-width : 800px) and (-webkit-min-device-pixel-ratio : 2) {
+                .header-line {
+                    width: 80px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-device-width : 800px) and (-webkit-min-device-pixel-ratio : 2) {
+
+        .metric-big-group {
+            padding: 8px 0px 20px 20px;
+            min-height: 540px;
+            max-height: 540px;
+            transform: scale(0.67) translate(-24%, -24%);
+            min-width: 140%;
+        }
+    }
+}
