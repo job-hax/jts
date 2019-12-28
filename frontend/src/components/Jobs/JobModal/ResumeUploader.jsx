@@ -45,7 +45,7 @@ class ResumeUploader extends React.Component {
     config.headers["Content-Type"] = "multipart/form-data";
 
     config.body = bodyFormData;
-    axiosCaptcha('http://localhost:8002/api/parser/', config).then(response => {
+    axiosCaptcha('http://127.0.0.1:8002/api/parser/', config).then(response => {
       if (response.statusText === "OK") {
         if (response.data.success) {
           this.props.updateParentState("resume", file);
