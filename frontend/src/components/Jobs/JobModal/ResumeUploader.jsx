@@ -6,7 +6,8 @@ import moment from "moment";
 import { axiosCaptcha } from "../../../utils/api/fetch_api";
 import {
   IS_CONSOLE_LOG_OPEN,
-  DATE_AND_TIME_FORMAT
+  DATE_AND_TIME_FORMAT,
+  errorMessage
 } from "../../../utils/constants/constants.js";
 import { NOTES, FILES, apiRoot } from "../../../utils/constants/endpoints.js";
 
@@ -37,8 +38,24 @@ class ResumeUploader extends React.Component {
         status: "done"
       }
     ];
-    this.props.updateParentState("resume", file);
-    this.props.updateParentState("formed_files", formedFiles);
+    let bodyFormData = new FormData();
+    bodyFormData.append("resume", file);
+    let config = { method: "POST" };
+    config.headers = {};
+    config.headers["Content-Type"] = "multipart/form-data";
+
+    config.body = bodyFormData;
+    axiosCaptcha('http://localhost:8002/api/parser/', config).then(response => {
+      if (response.statusText === "OK") {
+        if (response.data.success) {
+          this.props.updateParentState("resume", file);
+          this.props.updateParentState("formed_files", formedFiles);
+        }
+        else {
+          errorMessage("You must submit a LinkedIn resume pdf file!")
+        }
+      }
+    });
   }
 
   handleRemove(file) {
