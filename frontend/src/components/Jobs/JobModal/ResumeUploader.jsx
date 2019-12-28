@@ -67,7 +67,7 @@ class ResumeUploader extends React.Component {
             <Button>
               <Icon type="upload" /> Upload CV
             </Button>
-            <div style={{ color: "red", textAlign: "right" }}>* required</div>
+            <div style={{ color: "red", textAlign: "right" }}>* LinkedIn resume required</div>
           </div>
         )}
       </Upload>
