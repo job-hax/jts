@@ -22,7 +22,7 @@ class Footer extends Component {
           </Link>
         </div>
         <div className="footer-content footer-notation">
-          <span>JobHax 2019, All Rights Reserved</span>
+          <span>JobHax 2021, All Rights Reserved</span>
         </div>
         <div className="footer-content footer-social-links">
           {/*<Link to="/blogs">
